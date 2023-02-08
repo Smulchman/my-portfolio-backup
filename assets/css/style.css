@@ -1,0 +1,211 @@
+/* I've stored colors here so that I can change it one place instead of several places */
+:root{
+    --dark: #384048;
+    --darkest: #0b0d0e;
+    --light: white;
+}
+
+* {
+    font-family: georgia, serif ;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-shadow: 2px 2px 2px black;
+}
+
+/* no font color included because the color is already by the header */
+h1 {
+    font-size: 250%;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--light);
+}
+
+/* the h3 header is used to label each app image */
+h3 {
+    font-size: 125%;
+    font-weight: bold;
+    color: var(--light);
+    background-color: var(--dark);
+    box-shadow: 0px 5px 3px var(--darkest);
+}
+
+header {
+    color: var(--light);
+    display: flex;
+    background-image: linear-gradient(#77917f, #55765f);
+    justify-self: stretch;
+    justify-content: space-between;
+    border-top: 25px;
+}
+
+header div {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+nav {
+    flex-basis: 40%;
+    margin-right: 10px;
+    margin-top: 10px;
+    }
+
+    /* this class sets the formatting for the 'About Me' section*/
+.about-me {
+    background-image: linear-gradient(#55765f, #396546);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: start;
+    box-shadow: 0px 5px 5px var(--darkest);
+}
+
+/* here is where I set the size for the picture of me included in the about me section */
+.about-me figure{
+    width: 100%;
+    height: 500px;
+}
+
+/* I made this an ID in case I needed assign a class to thediv as well */
+#about-me-pic {
+    background-image: url(../picme.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+article p {
+    color: var(--light);
+    font-size: 24px;
+    padding: 5px;
+}
+
+/* again, the main app is an id so that it can be applied to something that already has a class */
+#main-app{
+    width: 100%;
+}
+
+/* this is the class that assigns a background image to the box */
+.main-app-pic{
+    width: 100%;
+    height: 300px;
+    background-image: url(../prework-study-guide.jpg);
+    background-size: cover;
+    box-shadow: inset 0px 5px 5px var(--darkest);
+}
+
+/* I edit the settings for h3 here to help visually differentiate it from the secondary apps */
+.main-app-pic h3{
+    background-color: transparent;
+    box-shadow: none;
+    margin-left: 8px;
+}
+
+/* the main section is where all of the secondary apps are kept initially it held the main app as well, but my formatting worked best with the main app outside of the 'main' div */
+main {
+    width: 100%;
+    border-top: solid 10px var(--dark);
+}
+
+/* this assigns the formatting for the individual cards for apps */
+.other-apps{
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    display: flex;
+}
+
+.other-apps a{
+    box-shadow: inset 0px 5px 5px var(--darkest);
+    height: 200px;
+    border: solid 10px var(--dark);
+}
+
+
+/* the following classes define the background images I use in the other apps section */
+.horiseon{
+    background-image: url(../horiseon.jpg);
+    background-size: cover;
+}
+
+.steel1{
+    background-image: url(../steel1.JPG);
+    background-size: cover;
+}
+
+.steel2{
+    background-image: url(../steel2.JPG);
+    background-size: cover;
+}
+
+.scaffold{
+    background-image: url(../scaffold.JPG);
+    background-size: cover;
+}
+
+/* I chose not to use a ul in my contact section and so I created a class that could assist with formatting */
+.align-right{
+    text-align: end;
+}
+
+/* this id sets the formatting for the contact me section */
+#contact-me{
+    color: var(--light);
+    background-image: linear-gradient(180deg, var(--dark), var(--darkest));
+    display: flex;
+    justify-content: space-between;
+}
+
+/* this is to split the contact me section into a left and right, just to make sure nothing gets squished */
+footer div{
+    flex-basis: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* the following styles are exist to ensure the website looks good in desktop format */
+@media screen and (min-width: 768px) {
+    * {
+        font-size: 24px;
+    }
+    
+    .about-me {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: normal;
+        justify-content: stretch;
+    }
+
+    .about-me figure {
+        width: 30%;
+        height: 300px;
+        margin-bottom: 8px;
+    }
+    
+    /* this is here to make sure that the photo with the picture of me has 30% of the width */
+    article {
+        flex-basis: 70%;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+    .main-app-pic{
+        height: 400px;
+    }
+
+    .other-apps {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+/* this is here to put two apps per row instead of just one. The height is adjusted to help the aspect ratio stay appealing */
+    .other-apps a{
+        flex-basis: 50%;
+        height: 300px;
+    }
+
+}
